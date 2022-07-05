@@ -1,0 +1,11 @@
+.slide-image {
+    -webkit-transition: width 250ms ease-out, height 250ms ease-out, top 250ms ease-out, left 250ms ease-out;
+    -moz-transition: width 250ms ease-out, height 250ms ease-out, top 250ms ease-out, left 250ms ease-out;
+    -o-transition: width 250ms ease-out, height 250ms ease-out, top 250ms ease-out, left 250ms ease-out;
+    transition: width 250ms ease-out, height 250ms ease-out, top 250ms ease-out, left 250ms ease-out;
+}
+
+.object-fit img {
+    object-fit: cover;
+    object-position: 50% 50%;
+}
