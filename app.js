@@ -15,10 +15,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     /* animate images */
     function imageCarrousel() {
+        const imageWrapper = document.querySelector('.image-wrapper')
+        const slidesWrapper = document.querySelector('.slides-wrapper')
+        const lastElHeight = allSlides[allSlides.length - 1].getBoundingClientRect().height
+        if(window.innerWidth < 768) {
+            imageWrapper.style.marginBottom = `${lastElHeight}px`
+            slidesWrapper.style.marginTop = `-${lastElHeight}px`
+        } else {
+            imageWrapper.style.marginBottom = '0px'
+            slidesWrapper.style.marginTop = '0px'
+        }
         for(let i = 0; i < allSlides.length; i++) {
             /* Get slide boundries and calculate size and position image */
             const el = allSlides[i].getBoundingClientRect()
-            let imageSize = Math.round(((window.innerHeight - el.top)/window.innerHeight) * 100)
+            let imageSize = Math.round((window.innerHeight - el.top)/el.height * 100)
+            console.log(`el-${i}: ${imageSize}`)
             let imagePositionFromBorder = (100 - imageSize) / 2
 
             if (imageSize >= 0) {
