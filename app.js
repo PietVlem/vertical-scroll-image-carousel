@@ -29,7 +29,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             /* Get slide boundries and calculate size and position image */
             const el = allSlides[i].getBoundingClientRect()
             let imageSize = Math.round((window.innerHeight - el.top)/el.height * 100)
-            console.log(`el-${i}: ${imageSize}`)
             let imagePositionFromBorder = (100 - imageSize) / 2
 
             if (imageSize >= 0) {
